@@ -405,7 +405,6 @@ section {
     width: 80%;
   }
 }
-
 @media (max-width: 480px) {
   body {
     display: flex;
