@@ -4,10 +4,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-image: url(./images/header/3.jpg); /* Efekts uz body */
+  background-image: url(./images/header/3.jpg);
+  /* Efekts uz body */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Pārliecinieties, ka attēls ir fiksēts */
+  background-attachment: fixed;
+  /* Pārliecinieties, ka attēls ir fiksēts */
 }
 
 .container {
@@ -22,7 +24,8 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 10; /* Nodrošina, ka konteiners ir virs fona efekta */
+  z-index: 10;
+  /* Nodrošina, ka konteiners ir virs fona efekta */
 }
 
 .theBall-outer {
@@ -31,11 +34,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Efekts aiz satura */
-}
-
-.theBall {
-  /* Jūsu efekta stilistika */
+  z-index: -1;
+  /* Efekts aiz satura */
 }
 
 
@@ -57,11 +57,16 @@ header h2 {
   color: rgb(0, 0, 0);
   border: 2px solid black;
   background-image: url("./images/header/fire-flames-isolated-black-background-abstract-blaze-fire-flame-texture.jpg");
-  background-size: cover; /* Nodrošina, ka attēls aizpilda tekstu */
-  background-position: center; /* Centrs fona attēlam */
-  background-repeat: no-repeat; /* Neatkārto fonu */
-  -webkit-text-fill-color: transparent; /* Teksta caurspīdīgums */
-  -webkit-background-clip: text; /* Fons tiek uzklāts uz teksta */
+  background-size: cover;
+  /* Nodrošina, ka attēls aizpilda tekstu */
+  background-position: center;
+  /* Centrs fona attēlam */
+  background-repeat: no-repeat;
+  /* Neatkārto fonu */
+  -webkit-text-fill-color: transparent;
+  /* Teksta caurspīdīgums */
+  -webkit-background-clip: text;
+  /* Fons tiek uzklāts uz teksta */
 }
 
 nav ul {
@@ -152,9 +157,8 @@ form button:hover {
   border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
+
 }
-
-
 
 section {
   width: 97%;
@@ -176,8 +180,6 @@ section {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-
-
 .hidden-text,
 .more-text {
   display: none;
@@ -194,41 +196,86 @@ section {
   cursor: pointer;
 }
 
+
+
 .skills-container {
+  height: 30vh;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 38px 0;
 }
 
-.skills-list {
-  list-style: disc;
-  padding-left: 20px;
-  padding-top: 30px;
-  margin: 0;
-  width: 60%;
-}
-
-.skills-list li {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.skills-list li i {
-  margin-right: 10px;
-}
-
-.skills-banner {
-  max-width: 54%;
+.skill-column {
+  width: 30%;
+  /* Katras kolonnas platums būs 30% */
   height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  margin-top: -40px;
+  background: url('./images/skills/second.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #26212c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1);
+  /* Uzlabots shadow efekts */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  /* Pievienota animācija ēnai */
+}
+
+.skill-column:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 48px rgba(0, 0, 0, 0.2);
+  /* Vairāk ēnu uz hover */
+}
+
+
+.skill-column h3 {
+  font-size: 1.8rem;
+  border-radius: 12px;
+  padding: 10px;
+  background: #ffffff1a;
+  border: 1px solid #ffffff20;
+  backdrop-filter: blur(16px) saturate(120%);
+  color: white;
+}
+
+
+.skill-card-container {
+  display: none;
+  margin-top: 10px;
+  gap: 5px;
+  /* Samazināta atstarpe starp kartēm */
+}
+
+.skill-card-container.open {
+  display: flex;
+  /* Kad klase 'open' ir pievienota, parādīt kā flex konteineru */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.skill-card {
+  width: 32%;
+  /* Katras kartes platums ir 32%, lai trīs kartes ietilptu rindā */
+  margin: 0;
+  /* Izņemta margin vērtība, lai samazinātu atstarpi starp kartēm */
+  box-sizing: border-box;
+}
+
+.skill-card img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+
 }
 
 #skills h2 {
   background-color: black;
   color: white;
-  width: 20vw;
+  width: 47vw;
   margin: 0;
   padding: 1px 0;
   border-radius: 5px;
@@ -292,18 +339,32 @@ section {
   transition: transform 0.2s ease;
 }
 
-.project-description .more-text {
+/* Izlabo 'extra-text' parādīšanu un slēpšanu */
+.project-description .extra-text {
   display: none;
 }
 
-.project-description.expanded .more-text {
+/* Papildus teksts tiek rādīts tikai tad, kad tiek pievienota 'expanded' klase */
+.project-description.expanded .extra-text {
   display: inline;
 }
 
+/* Paredzamais uzvedības stils, kad 'expanded' klase ir pievienota */
 .project-description.expanded .visible-text {
   display: none;
 }
 
+.read-more-btn {
+  cursor: pointer;
+  color: blue;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.read-more-btn:focus {
+  outline: none;
+}
 
 
 @media (max-width: 600px) {
@@ -396,147 +457,146 @@ section {
     width: 80%;
   }
 }
+
 @media (max-width: 480px) {
-    body {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      margin: 0;
-    }
-  
-    
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+  }
 
-    .container {
-      width: 95%;
-      padding: 12px;
-      
-    }
-  
-    header {
-      width: 100%;
-      height: auto;
-      font-size: 1rem;
-      padding: 15px;
-      margin-right: 7px;
-    }
-  
-    header h2 {
-      font-size: 5.5vh;
-      margin-left: 9px;
-      width: auto;
-   
-      padding: 16px;
-      margin-top: 1rem;
-      height: auto;
-      
-
-    }
-  
-    .header-video {
-      width: 100%;
-      height: auto;
-      margin-left: 1vh;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    nav ul li {
-      margin: 0;
-      padding: 5px;
-      width: 100%;
-    }
-  
-    nav ul li a {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  
-    section {
-      width: 100%;
-      margin: 20px 0;
-      padding: 10px;
-    }
-  
-  
-    .skills-container {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    .skills-banner {
-      width: 100%;
-      margin: 0 auto;
-    }
-  
-    .skills-list {
-      width: 100%;
-      padding-left: 10px;
-    }
-  
-    .project-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .project-video {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-  
-    .project-description {
-      margin: 10px 0;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-  
-    .project h3 {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 10px;
-    }
-  
-    form input,
-    form textarea {
-      width: 94%;
-      font-size: 1rem;
-    }
-  
-    form button {
-      width: 100%;
-      padding: 12px;
-      font-size: 1rem;
-    }
-  
-    .developer-description {
-      overflow: hidden;
-      max-height: 150px;
-      font-size: 1rem;
-      line-height: 1.4;
-      text-align: justify;
-    }
-  
-    .read-more-btn {
-      display: block;
-      margin-top: 10px;
-    }
-  
-    .developer-description .more-text {
-      display: none;
-    }
-  
-    .developer-description.expanded .more-text {
-      display: inline;
-    }
-  
-    .developer-description.expanded .visible-text {
-      display: none;
-    }
-  
+  .container {
+    width: 95%;
+    padding: 12px;
 
   }
-  
+
+  header {
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    padding: 15px;
+    margin-right: 7px;
+  }
+
+  header h2 {
+    font-size: 5.5vh;
+    margin-left: 9px;
+    width: auto;
+    padding: 16px;
+    margin-top: 1rem;
+    height: auto;
+  }
+
+  .header-video {
+    width: 100%;
+    height: auto;
+    margin-left: 1vh;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  section {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-video {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .project-description {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .project h3 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  form input,
+  form textarea {
+    width: 94%;
+    font-size: 1rem;
+  }
+
+  form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .developer-description {
+    overflow: hidden;
+    max-height: 150px;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .read-more-btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .developer-description .more-text {
+    display: none;
+  }
+
+  .developer-description.expanded .more-text {
+    display: inline;
+  }
+
+  .developer-description.expanded .visible-text {
+    display: none;
+  }
+
+  .skill-column h3 {
+    font-size: 1rem;
+    padding: 2px;
+  }
+
+  .skill-card img {
+    width: 37px;
+    height: 37px;
+    border: 2px solid #333;
+
+  }
+
+  #skills h2,
+  #projects h2,
+  #about h2,
+  #contact h2 {
+    font-size: 1.5rem;
+    font-size: 1.7rem;
+    width: 100%;
+  }
+}
