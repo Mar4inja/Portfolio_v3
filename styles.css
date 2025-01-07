@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gruppo&family=Kalam:wght@300;400;700&family=Klee+One&family=Pontano+Sans:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gruppo&family=Kalam:wght@300;400;700&family=Klee+One&family=Pontano+Sans:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   margin: 0;
@@ -17,7 +17,8 @@ body {
   margin: 0 auto;
   background-color: #c0bfd3;
   border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3),
+    -5px -5px 15px rgba(255, 255, 255, 0.5);
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -37,7 +38,6 @@ body {
   z-index: -1;
   /* Efekts aiz satura */
 }
-
 
 header {
   position: relative;
@@ -114,7 +114,6 @@ nav ul li a:hover {
 
 h2 {
   font-size: 2rem;
-
 }
 
 form input,
@@ -157,7 +156,6 @@ form button:hover {
   border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
-
 }
 
 section {
@@ -168,7 +166,6 @@ section {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .project-video {
   width: 100%;
@@ -196,8 +193,6 @@ section {
   cursor: pointer;
 }
 
-
-
 .skills-container {
   height: 30vh;
   display: flex;
@@ -210,7 +205,7 @@ section {
   width: 30%;
   /* Katras kolonnas platums būs 30% */
   height: auto;
-  background: url('./images/skills/second.jpg');
+  background: url("./images/skills/second.jpg");
   background-size: cover;
   display: flex;
   align-items: center;
@@ -231,7 +226,6 @@ section {
   /* Vairāk ēnu uz hover */
 }
 
-
 .skill-column h3 {
   font-size: 1.8rem;
   border-radius: 12px;
@@ -241,7 +235,6 @@ section {
   backdrop-filter: blur(16px) saturate(120%);
   color: white;
 }
-
 
 .skill-card-container {
   display: none;
@@ -269,7 +262,6 @@ section {
   width: 100px;
   height: 100px;
   border: 2px solid #333;
-
 }
 
 #skills h2 {
@@ -365,7 +357,6 @@ section {
 .read-more-btn:focus {
   outline: none;
 }
-
 
 @media (max-width: 600px) {
   body {
@@ -469,7 +460,6 @@ section {
   .container {
     width: 95%;
     padding: 12px;
-
   }
 
   header {
@@ -484,6 +474,7 @@ section {
     font-size: 5.5vh;
     margin-left: 9px;
     width: auto;
+
     padding: 16px;
     margin-top: 1rem;
     height: auto;
@@ -517,6 +508,20 @@ section {
     padding: 10px;
   }
 
+  .skills-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .skills-banner {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .skills-list {
+    width: 100%;
+    padding-left: 10px;
+  }
 
   .project-content {
     flex-direction: column;
@@ -577,26 +582,5 @@ section {
 
   .developer-description.expanded .visible-text {
     display: none;
-  }
-
-  .skill-column h3 {
-    font-size: 1rem;
-    padding: 2px;
-  }
-
-  .skill-card img {
-    width: 37px;
-    height: 37px;
-    border: 2px solid #333;
-
-  }
-
-  #skills h2,
-  #projects h2,
-  #about h2,
-  #contact h2 {
-    font-size: 1.5rem;
-    font-size: 1.7rem;
-    width: 100%;
   }
 }
