@@ -48,24 +48,22 @@
           alt="About me image"
           class="about-image"
         />
-        <h2>About me</h2>
-        <p class="developer-description">
-          I am a junior full-stack developer specializing in modern web
-          applications. I work with Java, Spring, Hibernate, React, and
-          JavaScript. I follow SCRUM and use tools like JIRA. I've built
-          real-time chat apps and social networks. Fluent in English and German,
-          proficient in Russian and Latvian. Excited for new software
-          development opportunities!
-          <a
-            id="cv-button"
-            href="./images/skills/Lebenslauf (2).pdf"
-            target="_blank"
-            class="cv-button"
-            >View CV</a
-          >
-        </p>
+        <div class="about-content">
+          <h2>About me</h2>
+          <p class="developer-description">
+            I am a junior full-stack developer specializing in modern web
+            applications. I work with Java, Spring, Hibernate, React, and
+            JavaScript. I follow SCRUM and use tools like JIRA. I've built
+            real-time chat apps and social networks. Fluent in English and German,
+            proficient in Russian and Latvian. Excited for new software
+            development opportunities!
+            <a
+              id="cv-button"
+              href="./images/skills/Lebenslauf (2).pdf"
+              target="_blank" class="cv-button">View CV</a>
+          </p>
+        </div>
       </section>
-
       <div class="cv-modal" id="cv-modal">
         <div class="cv-modal-content">
           <span class="cv-close-btn">&times;</span>
@@ -74,90 +72,59 @@
         </div>
       </div>
 
-      <!-- Skills -->
       <section id="skills">
         <h2>Skills</h2>
         <div class="skills-container">
-          <!-- Column 1: Programming Languages -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>Programming Languages</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/java.jpg" alt="Java" />
+          <div class="left-arrow" onclick="prevSkill()">
+            <img src="./images/skills/left.png" alt="Left Arrow" />
+          </div>
+          <div class="skills-columns-wrapper">
+            <!-- Column 1: Programming Languages -->
+            <div class="skill-column" id="skill1" onclick="toggleContent(this)">
+              <h3>Programming Languages</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/java.jpg" alt="Java" /></div>
+                <div class="skill-card"><img src="./images/skills/JS.png" alt="JavaScript" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
               </div>
-              <div class="skill-card">
-                <img src="./images/skills/JS.png" alt="JavaScript" />
+            </div>
+      
+            <!-- Column 2: Libraries -->
+            <div class="skill-column" id="skill2" onclick="toggleContent(this)">
+              <h3>Libraries</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/react-redux.png" alt="React" /></div>
+                <div class="skill-card"><img src="./images/skills/jquerry.jpeg" alt="jQuery" /></div>
+                <div class="skill-card"><img src="./images/skills/log4j-1014039069.png" alt="Vue" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="jQuery" /></div>
+                <div class="skill-card"><img src="./images/skills/spring.jpg" alt="Spring" /></div>
+                <div class="skill-card"><img src="./images/skills/bootstrap-social-2717011608.png" alt="Bootstrap" /></div>
               </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
+            </div>
+      
+            <!-- Column 3: REST -->
+            <div class="skill-column" id="skill3" onclick="toggleContent(this)">
+              <h3>REST</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/API.jpeg" alt="API" /></div>
+                <div class="skill-card"><img src="./images/skills/postman.jpg" alt="Postman" /></div>
+                <div class="skill-card"><img src="./images/skills/swagger.png" alt="Swagger" /></div>
+                <div class="skill-card"><img src="./images/skills/hibernate.jpg" alt="GraphQL" /></div>
+                <div class="skill-card"><img src="./images/skills/css.jpg" alt="JSON" /></div>
+                <div class="skill-card"><img src="./images/skills/mysql-logo-684x513.png" alt="XML" /></div>
               </div>
             </div>
           </div>
-
-          <!-- Column 2: Libraries -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>Libraries</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/react-redux.png" alt="React" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/jquerry.jpeg" alt="jQuery" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/log4j-1014039069.png" alt="Vue" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="jQuery" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/spring.jpg" alt="Spring" />
-              </div>
-              <div class="skill-card">
-                <img
-                  src="./images/skills/bootstrap-social-2717011608.png"
-                  alt="Bootstrap"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 3: REST -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>REST</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/API.jpeg" alt="API" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/postman.jpg" alt="Postman" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/swagger.png" alt="Swagger" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/hibernate.jpg" alt="GraphQL" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/css.jpg" alt="JSON" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/mysql-logo-684x513.png" alt="XML" />
-              </div>
-            </div>
+          <div class="right-arrow" onclick="nextSkill()">
+            <img src="./images/skills/right.png" alt="Right Arrow" />
           </div>
         </div>
       </section>
-
+      
+      
       <!-- Projects -->
       <section id="projects">
         <h2>Projects</h2>
