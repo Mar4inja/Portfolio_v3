@@ -5,20 +5,18 @@ body {
   padding: 0;
   height: 100%;
   background-image: url(./images/header/3.jpg);
-  /* Efekts uz body */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Pārliecinieties, ka attēls ir fiksēts */
 }
 
 .container {
   width: 50%;
   margin: 0 auto;
-  background-color: #c0bfd3;
+  background-color: #101010; /* Tirkīza krāsa */
   border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3),
-    -5px -5px 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 15px rgba(150, 150, 150, 0.3),
+    -5px -5px 15px rgba(48, 47, 47, 0.5);
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -26,7 +24,6 @@ body {
   align-items: center;
   position: relative;
   z-index: 10;
-  /* Nodrošina, ka konteiners ir virs fona efekta */
 }
 
 .theBall-outer {
@@ -36,7 +33,6 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* Efekts aiz satura */
 }
 
 header {
@@ -49,24 +45,32 @@ header {
   height: 16vh;
 }
 
+#contact h2,
+#skills h2,
+#projects h2 {
+  background-color: black;
+  color: white;
+  width: 47vw;
+  margin: 0;
+  padding: 1px 0;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 header h2 {
   position: relative;
   margin-top: 0;
   border-radius: 60px 0 60px 0;
   font-size: 11rem;
   color: rgb(0, 0, 0);
-  border: 2px solid black;
+  border: 2px solid rgba(245, 245, 245, 0.828);
   background-image: url("./images/header/fire-flames-isolated-black-background-abstract-blaze-fire-flame-texture.jpg");
   background-size: cover;
-  /* Nodrošina, ka attēls aizpilda tekstu */
   background-position: center;
-  /* Centrs fona attēlam */
   background-repeat: no-repeat;
-  /* Neatkārto fonu */
   -webkit-text-fill-color: transparent;
-  /* Teksta caurspīdīgums */
   -webkit-background-clip: text;
-  /* Fons tiek uzklāts uz teksta */
 }
 
 nav ul {
@@ -101,16 +105,7 @@ nav ul li a:hover {
   color: #0080ff;
 }
 
-#contact h2 {
-  background-color: black;
-  color: white;
-  width: 47vw;
-  margin: 0;
-  padding: 1px 0;
-  border-radius: 5px;
-  text-align: center;
-  box-sizing: border-box;
-}
+
 
 h2 {
   font-size: 2rem;
@@ -145,70 +140,63 @@ form button:hover {
   text-align: justify;
 }
 
+#about h2 {
+  color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-right: calc(39vh - 10px);
+  width: 12vh;
+}
+
 .developer-description {
   color: #ffffff;
   font-size: 1.2rem;
   line-height: 1.6;
-  text-align: justify;
-  width: 45vh;
-  padding-right: 40px;
-  margin-left: 45vh;
-}
-#about {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: black;
-  height: 40vh;
-  padding-top: 80px;
-  /* Pievieno atstarpi augšpusē, lai novietotu saturu zemāk */
 }
 
 #about {
   display: flex;
-  flex-direction: row; /* Izkārtojums uz vienu rindu */
-  align-items: center; /* Centra elementus vertikāli */
-  justify-content: center; /* Centra visus elementus horizontāli */
-  text-align: center;
+  flex-direction: row;
+  align-items: center;
   background-color: black;
   height: 40vh;
-  padding-top: 80px;
-  /* Pievieno atstarpi augšpusē, lai novietotu saturu zemāk */
+
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 48vh;
+  margin-left: -29vh;
+  margin-bottom: 2vh;
 }
 
 .about-image {
-  position: relative; /* Izmanto relative, lai attēls būtu daļa no flex konteineriem */
-  right: 0;
-  bottom: 0;
-  width: 30vh; /* Samazināts platums attēlam */
+  position: relative;
+  right: 17vh;
+  top: 13vh;
+  width: 74vh;
   height: auto;
   margin-right: 20px;
-  border-radius: 10px;
   filter: drop-shadow(0px 0px 12px rgb(138, 138, 1));
-  z-index: 2;
-  transition: transform 0.4s ease;
-}
-
-#about h2 {
-  color: white;
-  margin: 10px 0;
-  /* Samazina augšējo un apakšējo margin */
-  margin-left: calc(44vh + 10px);
-  padding: 1px 0;
-  border-radius: 5px;
-  text-align: center;
-  box-sizing: border-box;
+  z-index: 5; /* Nodrošina, ka attēls ir zem pogas */
 }
 
 .cv-button {
-  display: inline-block;
+  display: block;
+  margin-top: 15px;
   padding: 10px 20px;
   font-size: 16px;
+  width: 5vh;
   color: white;
   background-color: #007BFF;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  z-index: 10; /* Nodrošina, ka poga būs virs citiem elementiem */
+  position: relative;
 }
 
 .cv-button:hover {
@@ -245,19 +233,13 @@ form button:hover {
   cursor: pointer;
 }
 
-
-
-.about-image:hover {
-  transform: scale(1.06);
-}
-
 section {
   width: 97%;
   padding: 20px;
   margin: 60px 0;
-  background-color: #c0bfd3;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1E1E1E, #000000);
+  border: 1px solid rgba(245, 245, 245, 0.732);
+  border-radius: 15px;
 }
 
 .project-video {
@@ -275,48 +257,40 @@ section {
   display: none;
 }
 
-.read-more-btn {
-  display: block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .skills-container {
   height: 30vh;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   margin: 38px 0;
 }
 
-.skill-column {
-  width: 30%;
-  /* Katras kolonnas platums būs 30% */
-  height: auto;
-  background: url("./images/skills/second.jpg");
-  background-size: cover;
+.skills-columns-wrapper {
   display: flex;
+  width: 60%;
+  height: 100%;
+}
+
+.skill-column {
+  width: 100%;
+  height: auto;
+  background: url('./images/skills/second.jpg');
+  background-size: cover;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   cursor: pointer;
   border: 1px solid #26212c;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1);
-  /* Uzlabots shadow efekts */
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
-  /* Pievienota animācija ēnai */
+  transition: transform 0.6s, box-shadow 0.3s ease-in-out;
 }
 
 .skill-column:hover {
-  transform: scale(1.1);
+  transform: scale(1.04);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 48px rgba(0, 0, 0, 0.2);
-  /* Vairāk ēnu uz hover */
 }
 
 .skill-column h3 {
@@ -333,21 +307,17 @@ section {
   display: none;
   margin-top: 10px;
   gap: 5px;
-  /* Samazināta atstarpe starp kartēm */
 }
 
 .skill-card-container.open {
   display: flex;
-  /* Kad klase 'open' ir pievienota, parādīt kā flex konteineru */
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .skill-card {
   width: 32%;
-  /* Katras kartes platums ir 32%, lai trīs kartes ietilptu rindā */
   margin: 0;
-  /* Izņemta margin vērtība, lai samazinātu atstarpi starp kartēm */
   box-sizing: border-box;
 }
 
@@ -357,37 +327,40 @@ section {
   border: 2px solid #333;
 }
 
-#skills h2 {
-  background-color: black;
-  color: white;
-  width: 47vw;
-  margin: 0;
-  padding: 1px 0;
-  border-radius: 5px;
-  text-align: center;
-  box-sizing: border-box;
+
+
+.left-arrow {
+  position: absolute;
+  left: 100px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 100px;
+}
+
+.left-arrow img,
+.right-arrow img {
+  width: 80px;
+  height: 80px;
+}
+
+.left-arrow img:hover,
+.right-arrow img:hover {
+  transform: scale(1.1);
 }
 
 #projects {
   text-align: center;
-  /* Centra visu sekciju */
 }
 
-#projects h2 {
-  background-color: black;
-  color: white;
-  width: 47vw;
-  padding: 1px;
-  border-radius: 5px;
-  display: inline-block;
-}
 
 .project {
   margin-bottom: 90px;
 }
 
 .project h3 {
-  background-color: rgb(24, 52, 2);
+  background-color: #f4b41a;
   color: white;
   width: 47vw;
   margin: 0;
@@ -406,6 +379,7 @@ section {
 
 .project-description {
   margin-left: 10px;
+  color: whitesmoke;
   margin-top: 3vh;
   text-align: left;
 }
@@ -420,60 +394,97 @@ section {
 }
 
 .project-video:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: transform 0.2s ease;
 }
 
-/* Izlabo 'extra-text' parādīšanu un slēpšanu */
-.project-description .extra-text {
-  display: none;
-}
-
-/* Papildus teksts tiek rādīts tikai tad, kad tiek pievienota 'expanded' klase */
-.project-description.expanded .extra-text {
-  display: inline;
-}
-
-/* Paredzamais uzvedības stils, kad 'expanded' klase ir pievienota */
 .project-description.expanded .visible-text {
   display: none;
 }
 
-.read-more-btn {
-  cursor: pointer;
-  color: blue;
-  background: none;
-  border: none;
-  text-decoration: underline;
+/* 1. No 2400px un vairāk */
+@media (min-width: 2400px) {
+  .container {
+    width: 50%; /* Mainām container platumu */
+  }
+
+  header {
+    font-size: 2rem; /* Palielinām fonta lielumu header */
+  }
+
+  nav ul li {
+    margin: 0 100px; /* Palielinām margin starp navigācijas saites */
+  }
+
+  .skills-container {
+    height: 35vh; /* Mainām prasmes kontaineru augstumu */
+  }
+
+  .project-video {
+    max-width: 120vh; /* Mainām video platumu projektos */
+  }
+
+  .about-image {
+    width: 70vh; /* Mainām attēla platumu */
+  }
+
+  .project-description {
+    font-size: 1.5rem; /* Palielinām fonta lielumu projektos */
+  }
 }
 
-.read-more-btn:focus {
-  outline: none;
+/* 2. No 601px līdz 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+
+  nav ul li {
+    margin: 0 20px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  section {
+    width: 95%;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .project-video {
+    width: 80%;
+  }
 }
 
-@media (max-width: 600px) {
+/* 3. No 480px līdz 600px */
+@media (min-width: 480px) and (max-width: 600px) {
   body {
     flex-direction: column;
     padding: 10px;
   }
 
   #about {
-    flex-direction: column; /* Izmainīts uz kolonnu izkārtojumu mazākos ekrānos */
+    flex-direction: column;
     align-items: center;
-    height: auto; /* mainīts, lai sekcija varētu pielāgoties */
-    padding-top: 40px; /* Samazināts atstarpes augšpusē */
+    height: auto;
+    padding-top: 40px;
   }
 
   .about-image {
-    width: 80vw; /* Attēla platums tiek samazināts uz 80% no ekrāna platuma */
-    margin: 20px 0; /* Atstarpe no augšas un apakšas */
+    width: 80vw;
+    margin: 20px 0;
   }
 
   .developer-description {
-    width: 80%; /* Samazina platumu, lai teksts neaizņemtu pārāk daudz vietas */
-    margin-left: 0; /* Nodrošina, ka teksts tiek centrēts */
+    width: 80%;
+    margin-left: 0;
   }
-  
+
   .container {
     width: 90%;
   }
@@ -506,16 +517,6 @@ section {
     gap: 10px;
   }
 
-  .skills-banner {
-    max-width: 100%;
-    margin-top: 0;
-  }
-
-  .skills-list {
-    width: 100%;
-    padding-left: 10px;
-  }
-
   .project-content {
     flex-direction: column;
     align-items: center;
@@ -532,33 +533,7 @@ section {
   }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .container {
-    width: 70%;
-  }
-
-  nav ul li {
-    margin: 0 20px;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
-  }
-
-  section {
-    width: 95%;
-  }
-
-  .skills-container {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .project-video {
-    width: 80%;
-  }
-}
-
+/* 4. No 480px un mazāk */
 @media (max-width: 480px) {
   body {
     display: flex;
@@ -584,13 +559,12 @@ section {
     font-size: 5.5vh;
     margin-left: 9px;
     width: auto;
-
     padding: 16px;
     margin-top: 1rem;
     height: auto;
   }
 
-  .header-video {
+  header .header-video {
     width: 100%;
     height: auto;
     margin-left: 1vh;
@@ -618,19 +592,36 @@ section {
     padding: 10px;
   }
 
-  .skills-container {
-    flex-direction: column;
-    gap: 15px;
+  .skills-columns-wrapper {
+    display: flex;
+    width: 80%;
+    height: 100%;
   }
 
-  .skills-banner {
-    width: 100%;
-    margin: 0 auto;
+  .skill-card img {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #333;
   }
 
-  .skills-list {
-    width: 100%;
-    padding-left: 10px;
+  .skill-card-container.open {
+    margin-bottom: 3.1rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+
+  .left-arrow {
+    left: -7px;
+  }
+
+  .right-arrow {
+    right: -7px;
+  }
+
+  .skill-column h3 {
+    font-size: 1.4rem;
   }
 
   .project-content {
@@ -677,6 +668,18 @@ section {
     text-align: justify;
   }
 
+  .cv-button {
+    display: block;
+    margin: 1px auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007BFF;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    position: absolute;
+  }
+
   .read-more-btn {
     display: block;
     margin-top: 10px;
@@ -692,5 +695,433 @@ section {
 
   .developer-description.expanded .visible-text {
     display: none;
+  }
+
+  #about {
+    width: 37vh;
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -27vh;
+    margin-left: 55vh;
+    width: 15vh;
+    padding: 4vh;
+  }
+
+  #about .about-content {
+    font-size: 1rem;
+    width: 45vh;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 6vh;
+    margin-left: 0;
+    z-index: 10;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-top: -115px;
+    margin-left: 18vh;
+    border-radius: 10px;
+  }
+
+  .left-arrow img,
+  .right-arrow img {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* 1. No 2400px un vairāk */
+@media (min-width: 2400px) {
+  .container {
+    width: 50%; /* Mainām container platumu */
+  }
+
+  header {
+    font-size: 2rem; /* Palielinām fonta lielumu header */
+  }
+
+  nav ul li {
+    margin: 0 100px; /* Palielinām margin starp navigācijas saites */
+  }
+
+  .skills-container {
+    height: 35vh; /* Mainām prasmes kontaineru augstumu */
+  }
+
+  .project-video {
+    max-width: 120vh; /* Mainām video platumu projektos */
+  }
+
+  .about-image {
+    width: 70vh; /* Mainām attēla platumu */
+  }
+
+  .project-description {
+    font-size: 1.5rem; /* Palielinām fonta lielumu projektos */
+  }
+}
+
+/* 2. No 1025px līdz 2400px */
+@media (min-width: 1025px) and (max-width: 2400px) {
+  header h2{
+   font-size: 6rem;
+  }
+
+  .container {
+  
+    width: 80%;
+  }
+
+  nav ul li {
+    margin: 0 20px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  section {
+    width: 95%;
+  }
+
+  #about {
+    height: 50vh;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .project-video {
+    width: 80%;
+  }
+
+  #skills h2,
+  #projects h2,
+  #contact h2 {
+    width: 100%;
+  }
+
+  #projects h3 {
+    width: 100%;
+  }
+}
+
+/* 3. No 601px līdz 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+
+  nav ul li {
+    margin: 0 20px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  section {
+    width: 95%;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .project-video {
+    width: 80%;
+  }
+}
+
+/* 4. No 480px līdz 600px */
+@media (min-width: 480px) and (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #about {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-top: 40px;
+  }
+
+  .about-image {
+    width: 80vw;
+    margin: 20px 0;
+  }
+
+  .developer-description {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  header {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  section {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  h2 {
+    width: auto;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-video {
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-description {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* 5. No 480px un mazāk */
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  header {
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    padding: 15px;
+    margin-right: 7px;
+  }
+
+  header h2 {
+    font-size: 5.5vh;
+    margin-left: 9px;
+    width: auto;
+    padding: 16px;
+    margin-top: 1rem;
+    height: auto;
+  }
+
+  header .header-video {
+    width: 100%;
+    height: auto;
+    margin-left: 1vh;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  section {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .skills-columns-wrapper {
+    display: flex;
+    width: 80%;
+    height: 100%;
+  }
+
+  .skill-card img {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #333;
+  }
+
+  .skill-card-container.open {
+    margin-bottom: 3.1rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+
+  .left-arrow {
+    left: -7px;
+  }
+
+  .right-arrow {
+    right: -7px;
+  }
+
+  .skill-column h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-video {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .project-description {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .project h3 {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  form input,
+  form textarea {
+    width: 94%;
+    font-size: 1rem;
+  }
+
+  form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .developer-description {
+    overflow: hidden;
+    max-height: 150px;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .cv-button {
+    display: block;
+    margin: 1px auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007BFF;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .read-more-btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .developer-description .more-text {
+    display: none;
+  }
+
+  .developer-description.expanded .more-text {
+    display: inline;
+  }
+
+  .developer-description.expanded .visible-text {
+    display: none;
+  }
+
+  #about {
+    width: 37vh;
+    height: 54vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -27vh;
+    margin-left: 55vh;
+    width: 15vh;
+    padding: 4vh;
+  }
+
+  #about .about-content {
+    font-size: 1rem;
+    width: 45vh;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 6vh;
+    margin-left: 0;
+    z-index: 10;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-top: -115px;
+    margin-left: 18vh;
+    border-radius: 10px;
+  }
+
+  .left-arrow img,
+  .right-arrow img {
+    width: 40px;
+    height: 40px;
   }
 }

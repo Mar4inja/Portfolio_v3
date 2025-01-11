@@ -14,6 +14,29 @@ function toggleContent(element) {
   }
 }
 
+// Function to show the current skill container
+let currentSkillIndex = 0;
+const skills = document.querySelectorAll('.skill-column');
+
+function showSkill(index) {
+  skills.forEach((skill, i) => {
+    skill.style.display = (i === index) ? 'flex' : 'none';
+  });
+}
+
+function prevSkill() {
+  currentSkillIndex = (currentSkillIndex - 1 + skills.length) % skills.length;
+  showSkill(currentSkillIndex);
+}
+
+function nextSkill() {
+  currentSkillIndex = (currentSkillIndex + 1) % skills.length;
+  showSkill(currentSkillIndex);
+}
+
+// Initialize with the first skill
+showSkill(currentSkillIndex);
+
 // Event listener for when the document has finished loading
 document.addEventListener("DOMContentLoaded", function () {
   // Set video playback speed to 0.9x
@@ -30,23 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
-  // Handling the Read More functionality
-  const readMoreBtns = document.querySelectorAll('.read-more-btn');
-  readMoreBtns.forEach(button => {
-    button.addEventListener('click', function () {
-      const projectDescription = this.closest('.project-description'); // Find the closest description container
-      projectDescription.classList.toggle('expanded'); // Toggle expanded class to show/hide text
-
-      // Change the button text based on expansion
-      if (projectDescription.classList.contains('expanded')) {
-        this.textContent = 'Read less';
-      } else {
-        this.textContent = 'Read more';
-      }
-    });
-  });
-
 
   // Hamburger menu toggle functionality
   const hamburger = document.querySelector(".hamburger");
@@ -89,5 +95,34 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Oops! There was a problem submitting your form"); // Handle any errors
         });
     });
+  }
+
+  // CV Modal functionality
+  const cvButton = document.getElementById("cv-button");
+  const cvModal = document.getElementById("cv-modal");
+  const cvCloseBtn = document.querySelector(".cv-close-btn");
+
+  cvButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    cvModal.style.display = "block";
+  });
+
+  cvCloseBtn.addEventListener("click", function () {
+    cvModal.style.display = "none";
+  });
+
+  window.addEventListener("click", function (e) {
+    if (e.target === cvModal) {
+      cvModal.style.display = "none";
+    }
+  });
+
+  // Debugging to ensure the button is displayed
+  const cvButtonDebug = document.querySelector(".cv-button");
+  if (cvButtonDebug) {
+    cvButtonDebug.style.border = "2px solid red"; // Highlight the button for visibility
+    console.log("CV Button found and styled:", cvButtonDebug);
+  } else {
+    console.error("CV Button not found!");
   }
 });

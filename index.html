@@ -48,24 +48,22 @@
           alt="About me image"
           class="about-image"
         />
-        <h2>About me</h2>
-        <p class="developer-description">
-          I am a junior full-stack developer specializing in modern web
-          applications. I work with Java, Spring, Hibernate, React, and
-          JavaScript. I follow SCRUM and use tools like JIRA. I've built
-          real-time chat apps and social networks. Fluent in English and German,
-          proficient in Russian and Latvian. Excited for new software
-          development opportunities!
-          <a
-            id="cv-button"
-            href="./images/skills/Lebenslauf (2).pdf"
-            target="_blank"
-            class="cv-button"
-            >View CV</a
-          >
-        </p>
+        <div class="about-content">
+          <h2>About me</h2>
+          <p class="developer-description">
+            I am a junior full-stack developer specializing in modern web
+            applications. I work with Java, Spring, Hibernate, React, and
+            JavaScript. I follow SCRUM and use tools like JIRA. I've built
+            real-time chat apps and social networks. Fluent in English and German,
+            proficient in Russian and Latvian. Excited for new software
+            development opportunities!
+            <a
+              id="cv-button"
+              href="./images/skills/Lebenslauf (2).pdf"
+              target="_blank" class="cv-button">View CV</a>
+          </p>
+        </div>
       </section>
-
       <div class="cv-modal" id="cv-modal">
         <div class="cv-modal-content">
           <span class="cv-close-btn">&times;</span>
@@ -74,90 +72,59 @@
         </div>
       </div>
 
-      <!-- Skills -->
       <section id="skills">
         <h2>Skills</h2>
         <div class="skills-container">
-          <!-- Column 1: Programming Languages -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>Programming Languages</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/java.jpg" alt="Java" />
+          <div class="left-arrow" onclick="prevSkill()">
+            <img src="./images/skills/left.png" alt="Left Arrow" />
+          </div>
+          <div class="skills-columns-wrapper">
+            <!-- Column 1: Programming Languages -->
+            <div class="skill-column" id="skill1" onclick="toggleContent(this)">
+              <h3>Programming Languages</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/java.jpg" alt="Java" /></div>
+                <div class="skill-card"><img src="./images/skills/JS.png" alt="JavaScript" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="Empty" /></div>
               </div>
-              <div class="skill-card">
-                <img src="./images/skills/JS.png" alt="JavaScript" />
+            </div>
+      
+            <!-- Column 2: Libraries -->
+            <div class="skill-column" id="skill2" onclick="toggleContent(this)">
+              <h3>Libraries</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/react-redux.png" alt="React" /></div>
+                <div class="skill-card"><img src="./images/skills/jquerry.jpeg" alt="jQuery" /></div>
+                <div class="skill-card"><img src="./images/skills/log4j-1014039069.png" alt="Vue" /></div>
+                <div class="skill-card"><img src="./images/skills/empty.jpg" alt="jQuery" /></div>
+                <div class="skill-card"><img src="./images/skills/spring.jpg" alt="Spring" /></div>
+                <div class="skill-card"><img src="./images/skills/bootstrap-social-2717011608.png" alt="Bootstrap" /></div>
               </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="Empty" />
+            </div>
+      
+            <!-- Column 3: REST -->
+            <div class="skill-column" id="skill3" onclick="toggleContent(this)">
+              <h3>REST</h3>
+              <div class="skill-card-container">
+                <div class="skill-card"><img src="./images/skills/API.jpeg" alt="API" /></div>
+                <div class="skill-card"><img src="./images/skills/postman.jpg" alt="Postman" /></div>
+                <div class="skill-card"><img src="./images/skills/swagger.png" alt="Swagger" /></div>
+                <div class="skill-card"><img src="./images/skills/hibernate.jpg" alt="GraphQL" /></div>
+                <div class="skill-card"><img src="./images/skills/css.jpg" alt="JSON" /></div>
+                <div class="skill-card"><img src="./images/skills/mysql-logo-684x513.png" alt="XML" /></div>
               </div>
             </div>
           </div>
-
-          <!-- Column 2: Libraries -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>Libraries</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/react-redux.png" alt="React" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/jquerry.jpeg" alt="jQuery" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/log4j-1014039069.png" alt="Vue" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/empty.jpg" alt="jQuery" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/spring.jpg" alt="Spring" />
-              </div>
-              <div class="skill-card">
-                <img
-                  src="./images/skills/bootstrap-social-2717011608.png"
-                  alt="Bootstrap"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 3: REST -->
-          <div class="skill-column" onclick="toggleContent(this)">
-            <h3>REST</h3>
-            <div class="skill-card-container">
-              <div class="skill-card">
-                <img src="./images/skills/API.jpeg" alt="API" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/postman.jpg" alt="Postman" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/swagger.png" alt="Swagger" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/hibernate.jpg" alt="GraphQL" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/css.jpg" alt="JSON" />
-              </div>
-              <div class="skill-card">
-                <img src="./images/skills/mysql-logo-684x513.png" alt="XML" />
-              </div>
-            </div>
+          <div class="right-arrow" onclick="nextSkill()">
+            <img src="./images/skills/right.png" alt="Right Arrow" />
           </div>
         </div>
       </section>
-
+      
+      
       <!-- Projects -->
       <section id="projects">
         <h2>Projects</h2>
@@ -180,43 +147,6 @@
                 applications. The goal is to educate users on the steps a
                 computer goes through to start and function.
               </span>
-              <span class="extra-text">
-                The simulation provides an interactive environment where users
-                can engage with different system components, such as the CPU,
-                memory, and storage. The PC simulation also features a simulated
-                file system, where users can create, delete, and manage files,
-                mimicking the user experience of an actual computer. In
-                addition, users can interact with different software,
-                replicating real-world application launches and processes. The
-                user interface is designed to resemble a common operating
-                system, with desktop icons, taskbars, and system alerts. This
-                project aims to help users understand the inner workings of a PC
-                in a hands-on way. Through this interactive simulation, users
-                can also learn troubleshooting steps, such as dealing with
-                system crashes or hardware failures. The project is designed to
-                be educational, offering tutorials and guided exercises. These
-                exercises help users understand system architecture, operating
-                systems, and the relationship between hardware and software. It
-                also includes a feature to simulate system updates, allowing
-                users to experience how software updates are deployed on a real
-                computer. For those interested in IT and computer science, this
-                simulation provides valuable learning opportunities. It is also
-                a great tool for individuals unfamiliar with computers who want
-                to get comfortable with basic PC operations. The system is built
-                with a modular design, allowing for easy expansion to include
-                more advanced features, such as network simulations or cloud
-                services. Additionally, the project offers various difficulty
-                levels, so users of all skill levels can enjoy and learn from
-                it. The simulation provides instant feedback, so users can
-                understand what went wrong during a particular process and learn
-                from their mistakes. It’s designed to be intuitive, requiring no
-                prior knowledge of computers to get started. Overall, this
-                project makes learning about computer systems more accessible,
-                fun, and interactive. It’s an excellent resource for classrooms,
-                online learning platforms, and individual users who want to
-                deepen their understanding of computers.
-              </span>
-              <button class="read-more-btn">Read more</button>
             </p>
           </div>
         </div>
@@ -237,46 +167,7 @@
                 websites, each highlighting a unique set of skills. The
                 portfolio is fully responsive, meaning it adjusts seamlessly to
                 different screen sizes, from desktop monitors to mobile devices.
-                Each project is presented with detailed descriptions, outlining
-                the challenges faced and the solutions implemented during
-                development.
               </span>
-              <span class="extra-text">
-                The portfolio includes code samples and links to live websites,
-                providing potential employers or clients with easy access to the
-                finished products. In addition to showcasing technical skills,
-                the portfolio highlights strong design principles, such as
-                usability, accessibility, and user experience. The projects
-                demonstrate proficiency in HTML, CSS, JavaScript, and frameworks
-                such as React and Angular. The design is modern and clean, using
-                a minimalistic approach to focus on the work rather than
-                unnecessary distractions. There is also a section dedicated to
-                skills and certifications, where the developer showcases their
-                knowledge of programming languages, tools, and methodologies.
-                Interactive features, such as hover effects and smooth
-                transitions, provide an engaging experience for visitors. The
-                portfolio is built with performance in mind, ensuring fast load
-                times and smooth navigation. It is also SEO-optimized, ensuring
-                it ranks well on search engines, making it easier for potential
-                clients or employers to find. The design system is consistent
-                throughout, with a cohesive color palette and typography. There
-                is a blog section where the developer shares insights,
-                tutorials, and industry trends, demonstrating thought leadership
-                in the field. The portfolio also includes a contact form, making
-                it easy for visitors to reach out with inquiries or project
-                offers. This project demonstrates not only coding and design
-                skills but also the ability to create a personal brand and
-                market oneself effectively. The portfolio is continually updated
-                with new projects, ensuring it reflects the developer’s current
-                skill level and expertise. The project highlights the
-                developer's problem-solving abilities, showing how they tackle
-                real-world challenges. It’s a great tool for any web developer
-                looking to showcase their abilities and make a strong impression
-                on potential employers or clients. The portfolio is designed to
-                be a dynamic, evolving representation of the developer’s work,
-                demonstrating growth and continuous learning.
-              </span>
-              <button class="read-more-btn">Read more</button>
             </p>
           </div>
         </div>
@@ -298,47 +189,8 @@
                 technical knowledge can quickly get started. The chat rooms are
                 organized by topics, allowing users to join conversations based
                 on their interests, whether it’s technology, sports, or general
-                discussions. Each chat room is equipped with moderation tools to
-                ensure a safe and respectful environment for all users. Users
-                can create private rooms for more focused discussions or join
-                public ones to interact with a larger audience.
+                discussions.
               </span>
-              <span class="extra-text">
-                The platform also includes a real-time notification system,
-                alerting users to new messages or activities within their chat
-                rooms. Talk-Town features a robust server-side architecture to
-                handle large volumes of users and messages simultaneously,
-                ensuring smooth communication even during peak times. It also
-                offers user authentication, allowing individuals to sign in and
-                access their personal messages and room preferences. The
-                platform is scalable, meaning it can handle a growing user base
-                without sacrificing performance. To enhance security, Talk-Town
-                uses encryption to protect private messages and sensitive data.
-                Additionally, there is a feature for users to report
-                inappropriate content or behavior, helping maintain a positive
-                and secure environment. Talk-Town also integrates with external
-                APIs, such as weather or news services, allowing users to share
-                relevant information directly in their chat rooms. Users can
-                customize their profiles, choosing avatars, display names, and
-                personal bios. The platform allows users to send multimedia
-                files, such as images or videos, making conversations more
-                interactive and dynamic. The design is mobile-first, ensuring
-                that users can access the platform seamlessly from smartphones,
-                tablets, and desktops. Talk-Town includes real-time language
-                translation, enabling users from different parts of the world to
-                communicate easily in their preferred languages. The platform is
-                fully responsive, ensuring compatibility across various devices
-                and screen sizes. Talk-Town aims to be more than just a
-                messaging platform, providing users with an immersive and social
-                experience where they can connect, share, and collaborate. The
-                project showcases advanced real-time communication capabilities,
-                including WebSockets and server-side event handling, providing a
-                solid foundation for future improvements. Whether for casual
-                chat or professional discussions, Talk-Town is designed to meet
-                the needs of diverse user groups and foster meaningful
-                conversations.
-              </span>
-              <button class="read-more-btn">Read more</button>
             </p>
           </div>
         </div>
