@@ -138,7 +138,6 @@ form button:hover {
   background-color: #555555;
 }
 
-.developer-description,
 .project-description {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -146,16 +145,110 @@ form button:hover {
   text-align: justify;
 }
 
+.developer-description {
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  width: 45vh;
+  padding-right: 40px;
+  margin-left: 45vh;
+}
+#about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  height: 40vh;
+  padding-top: 80px;
+  /* Pievieno atstarpi augšpusē, lai novietotu saturu zemāk */
+}
+
+#about {
+  display: flex;
+  flex-direction: row; /* Izkārtojums uz vienu rindu */
+  align-items: center; /* Centra elementus vertikāli */
+  justify-content: center; /* Centra visus elementus horizontāli */
+  text-align: center;
+  background-color: black;
+  height: 40vh;
+  padding-top: 80px;
+  /* Pievieno atstarpi augšpusē, lai novietotu saturu zemāk */
+}
+
+.about-image {
+  position: relative; /* Izmanto relative, lai attēls būtu daļa no flex konteineriem */
+  right: 0;
+  bottom: 0;
+  width: 30vh; /* Samazināts platums attēlam */
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+  filter: drop-shadow(0px 0px 12px rgb(138, 138, 1));
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
 #about h2 {
-  background-color: rgb(71, 7, 128);
   color: white;
-  width: 47vw;
-  margin: 0;
-  margin-left: -3px;
+  margin: 10px 0;
+  /* Samazina augšējo un apakšējo margin */
+  margin-left: calc(44vh + 10px);
   padding: 1px 0;
   border-radius: 5px;
   text-align: center;
   box-sizing: border-box;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #0056b3;
+}
+
+.cv-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cv-modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.cv-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+.about-image:hover {
+  transform: scale(1.06);
 }
 
 section {
@@ -364,6 +457,23 @@ section {
     padding: 10px;
   }
 
+  #about {
+    flex-direction: column; /* Izmainīts uz kolonnu izkārtojumu mazākos ekrānos */
+    align-items: center;
+    height: auto; /* mainīts, lai sekcija varētu pielāgoties */
+    padding-top: 40px; /* Samazināts atstarpes augšpusē */
+  }
+
+  .about-image {
+    width: 80vw; /* Attēla platums tiek samazināts uz 80% no ekrāna platuma */
+    margin: 20px 0; /* Atstarpe no augšas un apakšas */
+  }
+
+  .developer-description {
+    width: 80%; /* Samazina platumu, lai teksts neaizņemtu pārāk daudz vietas */
+    margin-left: 0; /* Nodrošina, ka teksts tiek centrēts */
+  }
+  
   .container {
     width: 90%;
   }

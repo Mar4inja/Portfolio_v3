@@ -1,79 +1,71 @@
+// Function to toggle open/close on skill card containers when clicking
 function toggleContent(element) {
-  // Meklē `skill-card-container`, kas ir iekšā klikšķinātajā `skill-column`
-  const cardContainer = element.querySelector('.skill-card-container');
+  const cardContainer = element.querySelector('.skill-card-container'); // Find the .skill-card-container inside clicked element
 
-  // Ja elements jau ir atvērts (ar klasi `open`), tad slēdz to
   if (cardContainer.classList.contains('open')) {
-    cardContainer.classList.remove('open');
+    cardContainer.classList.remove('open'); // If already open, remove 'open' class to close
   } else {
-    // Slēdz visus citus atvērtos kontainerus
+    // Close other open containers
     document.querySelectorAll('.skill-card-container.open').forEach((container) => {
       container.classList.remove('open');
     });
 
-    // Atver izvēlēto
-    cardContainer.classList.add('open');
+    cardContainer.classList.add('open'); // Add 'open' class to open the clicked container
   }
 }
 
-
+// Event listener for when the document has finished loading
 document.addEventListener("DOMContentLoaded", function () {
-  // Set video playback speed
+  // Set video playback speed to 0.9x
   var video = document.getElementById("video-background");
   video.playbackRate = 0.9;
 
-  // Smooth scroll navigation
+  // Smooth scroll for navigation links
   document.querySelectorAll("nav ul li a").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetSection = document.querySelector(this.getAttribute("href"));
+      e.preventDefault(); // Prevent default anchor behavior
+      const targetSection = document.querySelector(this.getAttribute("href")); // Get target section
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
+        targetSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the target section
       }
     });
   });
 
-// Saglabājam visus 'read-more-btn' elementus
-const readMoreBtns = document.querySelectorAll('.read-more-btn');
+  // Handling the Read More functionality
+  const readMoreBtns = document.querySelectorAll('.read-more-btn');
+  readMoreBtns.forEach(button => {
+    button.addEventListener('click', function () {
+      const projectDescription = this.closest('.project-description'); // Find the closest description container
+      projectDescription.classList.toggle('expanded'); // Toggle expanded class to show/hide text
 
-// Iegūstam katru pogu un pievienojam notikumu
-readMoreBtns.forEach(button => {
-  button.addEventListener('click', function () {
-    // Atrast vecāko projekta aprakstu (pirmais <p> ar klase 'project-description')
-    const projectDescription = this.closest('.project-description');
-
-    // Mainām 'expanded' klasi, lai parādītu/slēptu papildu tekstu
-    projectDescription.classList.toggle('expanded');
-
-    // Mainām pogas tekstu uz 'Read less' vai 'Read more'
-    if (projectDescription.classList.contains('expanded')) {
-      this.textContent = 'Read less';
-    } else {
-      this.textContent = 'Read more';
-    }
+      // Change the button text based on expansion
+      if (projectDescription.classList.contains('expanded')) {
+        this.textContent = 'Read less';
+      } else {
+        this.textContent = 'Read more';
+      }
+    });
   });
-});
 
 
-
-  // Hamburger menu animation
+  // Hamburger menu toggle functionality
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("nav ul");
-
   if (hamburger && navMenu) {
     hamburger.addEventListener("click", function () {
       this.classList.toggle("active");
       navMenu.classList.toggle("show");
     });
   }
-  // Form submission
-  const contactForm = document.getElementById("contact-form");
 
+  // Handling form submission
+  const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
+      e.preventDefault(); // Prevent form from submitting the default way
+      const formData = new FormData(this); // Create a FormData object from the form data
 
+      // Send form data via fetch
       fetch(this.action, {
         method: this.method,
         body: formData,
@@ -81,7 +73,7 @@ readMoreBtns.forEach(button => {
       })
         .then((response) => {
           if (response.ok) {
-            alert("Message sent!");
+            alert("Message sent!"); // If success, show success message and reset form
             this.reset();
           } else {
             return response.json().then((data) => {
@@ -94,9 +86,8 @@ readMoreBtns.forEach(button => {
           }
         })
         .catch(() => {
-          alert("Oops! There was a problem submitting your form");
+          alert("Oops! There was a problem submitting your form"); // Handle any errors
         });
     });
   }
 });
-
