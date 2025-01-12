@@ -54,6 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Handling the Read More functionality
+  const readMoreBtns = document.querySelectorAll('.read-more-btn');
+  readMoreBtns.forEach(button => {
+    button.addEventListener('click', function () {
+      const projectDescription = this.closest('.project-description'); // Find the closest description container
+      projectDescription.classList.toggle('expanded'); // Toggle expanded class to show/hide text
+
+      // Change the button text based on expansion
+      if (projectDescription.classList.contains('expanded')) {
+        this.textContent = 'Read less';
+      } else {
+        this.textContent = 'Read more';
+      }
+    });
+  });
+
+
   // Hamburger menu toggle functionality
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector("nav ul");
